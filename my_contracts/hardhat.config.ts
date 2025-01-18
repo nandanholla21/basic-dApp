@@ -8,8 +8,13 @@ const config: HardhatUserConfig = {
   },
   networks:{
     hardhat:{
+      mining:{
+        auto:true
+      },
       chainId:1337
-    }
+      
+    },
+    
   }
 };
 
