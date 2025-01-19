@@ -1,0 +1,23 @@
+<div class="shape">
+
+    <table class="table">
+        <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Wallet Address</th>
+        <th scope="col">Operation</th>
+        <th scope="col">Tokens</th>
+        <th scope="col">Remaining Tokens</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let tx of tx_history; let i = index" >
+        <th scope="row">{{i+1}}</th>
+        <td>{{tx.wallet_address}}</td>
+        <td>{{tx.Operation}}</td>
+        <td>{{tx.tokens}}</td>
+        <td>{{tx.balance}}</td>
+    </tr>
+</tbody>
+</table>
+</div>

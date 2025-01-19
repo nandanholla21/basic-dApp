@@ -1,0 +1,23 @@
+<div>
+    <form class="forms" autocomplete="off" (ngSubmit)="mint()">
+        <div class="mb-3">
+            <select class="form-select" name="selected_wallet" aria-label="Default select example" [(ngModel)]="selected_wallet">
+                <option *ngFor="let wallet of wallets" >{{wallet}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputText1" class="form-label">Mint Amount</label>
+            <input type="text" name="mint_amount" class="form-control" id="exampleInputText1" [(ngModel)]="mint_amount">
+           
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+<div class="alert alert-success" role="alert" *ngIf="success">
+    Successfull Mint
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="failure">
+    Unsuccessfull Mint
+</div>

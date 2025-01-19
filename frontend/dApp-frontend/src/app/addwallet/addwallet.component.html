@@ -1,0 +1,11 @@
+<div>
+
+    <form (ngSubmit)="added_wallet()" autocomplete="off">
+        <div class="mb-3">
+            <label for="exampleInputText1" class="form-label">Enter Wallet Address</label>
+            <input type="text" name="wallet_address" class="form-control" id="exampleInputText1"  [(ngModel)]="wallet_address">
+           
+        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
