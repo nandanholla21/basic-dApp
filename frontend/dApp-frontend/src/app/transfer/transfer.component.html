@@ -1,0 +1,30 @@
+<div>
+    <form class="forms" autocomplete="off" (ngSubmit)="transfer()">
+        <h4>From: </h4>
+        <div class="mb-3">
+            <select class="form-select" name="from_wallet" aria-label="Default select example" [(ngModel)]="from_wallet">
+                <option *ngFor="let wallet of wallets" >{{wallet}}</option>
+            </select>
+        </div>
+        <h4>To: </h4>
+        <div class="mb-3">
+            <select class="form-select" name="to_wallet" aria-label="Default select example" [(ngModel)]="to_wallet">
+                <option *ngFor="let wallet of wallets" >{{wallet}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputText1" class="form-label">Amount</label>
+            <input type="text" name="_amount" class="form-control" id="exampleInputText1" [(ngModel)]="_amount">
+           
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+<div class="alert alert-success" role="alert" *ngIf="success">
+    Successfull Transfer
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="failure">
+    Unsuccessfull Transfer
+</div>

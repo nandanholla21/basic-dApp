@@ -5,6 +5,7 @@ import { MintComponent } from './mint/mint.component';
 import { AddwalletComponent } from './addwallet/addwallet.component';
 import { BurnComponent } from './burn/burn.component';
 import { TxHistoryComponent } from './tx-history/tx-history.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 export const routes: Routes = [
     {
@@ -26,5 +27,9 @@ export const routes: Routes = [
     {
         path:'tx_history',
         component:TxHistoryComponent
+    },
+    {
+        path:'transfer',
+        component:TransferComponent
     }
 ];

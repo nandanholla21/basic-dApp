@@ -638,6 +638,20 @@ const contractABI =   [
     }
   });
 
+  app.post("/transfer",async (req,res) =>{
+    const _from = req.body.from_wallet;
+    const _to = req.body.to_wallet;
+    const _amount = req.body.amount;
+    const tx = await contract.transferTo(_from,_to,_amount);
+    const recepit = await tx.wait();
+    if(recepit){
+      res.send({message:"success"});
+    }
+    else{
+      res.send({message:"error"});
+    }
+  });
+
   app.post("/balance",  async (req,res) =>{
     
     const wallet_address =  req.body.wallet_address;
