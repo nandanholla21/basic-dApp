@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hardhat-app
+spec:
+  selector:
+    matchLabels:
+      app: hardhat-app
+  template:
+    metadata:
+      labels:
+        app: hardhat-app
+    spec:
+      containers:
+      - name: hardhat-app
+        image: nandanholla/hardhat_dapp_nhk:1.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8545
+        stdin: true
+        tty: true

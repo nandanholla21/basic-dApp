@@ -15,7 +15,7 @@ app.get("/deploy", async (req,res) =>{
 
 
 
-const provider = new JsonRpcProvider("http://127.0.0.1:8545/");
+const provider = new JsonRpcProvider("http://hardhat-app:8545");
 const signer  = await provider.getSigner(0);
 const token_ABI = [
   {

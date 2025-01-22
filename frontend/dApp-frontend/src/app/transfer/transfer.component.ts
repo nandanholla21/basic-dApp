@@ -26,7 +26,7 @@ export class TransferComponent implements OnInit {
     this.wallets = this.sharedService.wallets;
   }
   transfer(){
-    this.http.post<any>("http://localhost:3000/transfer",{
+    this.http.post<any>("http://backend-app:3000/transfer",{
           from_wallet:this.from_wallet,
           to_wallet:this.to_wallet,
           amount:this._amount
@@ -36,7 +36,7 @@ export class TransferComponent implements OnInit {
             this.failure=false;
             this.success =true;
             //calculate balance of that from account
-            this.http.post<any>("http://localhost:3000/balance",{wallet_address:this.from_wallet}).subscribe((data) =>{
+            this.http.post<any>("http://backend-app:3000/balance",{wallet_address:this.from_wallet}).subscribe((data) =>{
               if(data.message){
                 this.sharedService.ops.push(new Transactions(this.from_wallet,"BURN",this._amount,data.message));
               }
@@ -46,7 +46,7 @@ export class TransferComponent implements OnInit {
             });
 
             //calculate the balance of the to account
-            this.http.post<any>("http://localhost:3000/balance",{wallet_address:this.to_wallet}).subscribe((data) =>{
+            this.http.post<any>("http://backend-app:3000/balance",{wallet_address:this.to_wallet}).subscribe((data) =>{
               if(data.message){
                 this.sharedService.ops.push(new Transactions(this.to_wallet,"MINT",this._amount,data.message));
               }

@@ -28,7 +28,7 @@ export class BurnComponent {
 
     burn(){
       //api call to nodejs
-      this.http.post<any>("http://localhost:3000/burn",{
+      this.http.post<any>("http://backend-app:3000/burn",{
         wallet_address:this.selected_wallet,
         amount:this.burn_amount
       })
@@ -38,7 +38,7 @@ export class BurnComponent {
         this.success =true;
         //calculate balance of that account
 
-        this.http.post<any>("http://localhost:3000/balance",{wallet_address:this.selected_wallet}).subscribe((data) =>{
+        this.http.post<any>("http://backend-app:3000/balance",{wallet_address:this.selected_wallet}).subscribe((data:any) =>{
           if(data.message){
             this.sharedService.ops.push(new Transactions(this.selected_wallet,"BURN",this.burn_amount,data.message));
           }
