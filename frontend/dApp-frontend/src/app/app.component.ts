@@ -20,7 +20,7 @@ export class AppComponent implements DoCheck,OnInit {
     
   }
   ngOnInit(): void {
-      this.http.get<any>("http://backend-app:3000/deploy").subscribe((data:any)=>{
+      this.http.get<any>("/deploy").subscribe((data:any)=>{
           if(data.message === "deployed"){
             console.log("Deployed contracts");
           }

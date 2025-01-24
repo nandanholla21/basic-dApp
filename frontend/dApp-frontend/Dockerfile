@@ -1,14 +1,11 @@
-FROM node:23-alpine
+FROM node:22-alpine
 
-WORKDIR /dapp/frontend
+WORKDIR /app
 
-COPY . /dapp/frontend/
-
+COPY . /app/
 
 RUN npm install
 
-RUN npm install -g @angular/cli
-
 EXPOSE 4200
 
-CMD [ "ng","serve"]
+CMD ["ng", "serve", "--proxy-config", "proxy.conf.json"]

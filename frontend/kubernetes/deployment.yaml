@@ -13,10 +13,10 @@ spec:
     spec:
       containers:
       - name: frontend-app
-        image: nandanholla/frontend-app:1.0
+        image: nandanholla/frontend-app:1.1
         resources:
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "1Gi"
+            cpu: "1"
         ports:
         - containerPort: 4200

@@ -1,0 +1,8 @@
+{
+    "/deploy": {
+      "target": "http://backend-app:3000/deploy",  
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  
